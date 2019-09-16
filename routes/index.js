@@ -7,6 +7,6 @@ router.get('/', function(req, res, next) {
 });
 router.post('/', function(req, res, next) {
   console.log(req.body)
-  res.render('commande', { title: 'Express', commande:req.body });
+  res.render('commande', { title: 'Ma Pizzeria', commande:req.body });
 });
 module.exports = router;
