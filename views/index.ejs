@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form method="post">
+            QUEL TYPE DE PIZZA ?
+            <br/>
+            <input type="radio" name="type" value="hawaienne"> Hawaïenne
+            <br/>
+            <input type="radio" name="type" value="allDressed" CHECKED> All Dressed
+            <br/>
+            <input type="radio" name="type" value="sicilienne"> Sicilienne
+            <br/>
+            <br/>
+            QUELLE QUANTITÉ ?
+            <br/>
+            <input type="number" name="qte" value="1" min="1" max="99">
+            <br/>
+            <br/>
+            QUELLE TAILLE ?
+            <br/>
+            <select name="taille">
+                <option value="S">Small</option>
+                <option value="M">Medium</option>
+                <option value="L">Large</option>
+            </select>
+            <br/>
+            <br/>
+            QUELS INGRÉDIENTS SUPPLÉMENTAIRES ?
+            <br/>
+            <input type="checkbox" name="ingredient" value="p" />pepperoni
+            <br/>
+            <input type="checkbox" name="ingredient" value="m" />mozzarella
+            <br/>
+            <input type="checkbox" name="ingredient" value="o" />oeuf
+            <br/>
+            <br/>
+            QUELLE ADRESSE ?
+            <br/>
+            <textarea name="adresse">
+
+            </textarea>
+            <br/>
+            <br/>
+            Code postal ? exemple : "A1A 1A1"<br/>
+            <input name = "zip" type="text" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"/>
+            <br/>
+            <br/>
+            QUEL EST VOTRE NOM ?
+            <br/>
+            <input type="text" name="nom">
+            <br/>
+            <br/>
+            QUEL EST VOTRE PRÉNOM ?
+            <br/>
+            <input type="text" name="prenom">
+            <br/>
+            <br/>
+            QUEL EST VOTRE TÉLÉPHONE ? exemple : "123-456-7890"
+            <br/>
+            <input type="text" name="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+            <br/>
+            <br/>
+            Quel est votre courriel ? exemple : "billgates@hotmail.com" <br/>
+            <input type="email">
+            <br/>
+            <br/>
+            QUEL EST VOTRE MODE DE PAIEMENT ?
+            <br/>
+            <input type="text" name="paiement">
+            <br/>
+            <br/>
+            <input type="submit" value="Confirmer ma commande" />
+        </form>
+  </body>
+</html>
