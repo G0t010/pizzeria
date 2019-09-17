@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+      <% include ../partials/head %>
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <form method="post">
+  <body class="container">
+    <header>
+    <% include ../partials/header %>
+    </header>
+    <main>
+      <div class="jumbotron">
+        <h1><%= title %></h1>
+        <form method="post">
             QUEL TYPE DE PIZZA ?
             <br/>
             <input type="radio" name="type" value="hawaienne"> Hawaïenne
@@ -76,5 +80,10 @@
             <br/>
             <input type="submit" value="Confirmer ma commande" />
         </form>
+      </div>
+    </main>
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
   </body>
 </html>

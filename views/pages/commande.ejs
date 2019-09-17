@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <% include ../partials/head %>
+  </head>
+  <body class="container">
+    <header>
+      <% include ../partials/header %>
+    </header>
+    <main>
+      <h1>Votre Commande :</h1>
+      <p>Type : <%= commande.type %></p>
+      <p>Qte : <%= commande.qte %></p>
+      <p>ingr : <%= commande.ingredient %></p>
+      <p>Taille : <%= commande.taille %></p>
+      <p>Adresse : <%= commande.adresse %></p>
+      <p>Nom : <%= commande.nom %></p>
+      <p>Prenom : <%= commande.prenom %></p>
+      <p>Tél : <%= commande.tel %></p>
+      <p>Paiement : <%= commande.paiement %></p>
+      <br/>
+      <h1>Votre Facture :</h1>
+      <% var prix %>
+      <% if(commande.type == "allDressed") { %>
+        <% prix = 8.1; %>
+      <% } else if (commande.type == "hawaienne") { %>
+        <% prix = 7.0; %>
+      <% } else if (commande.type == "sicilienne") { %>
+        <% prix = 6.3; %>
+      <% } %>
+      <% if (typeof(commande.ingredient) != "undefined")  { %>
+      <% prix += (commande.ingredient.length * 0.5) %>
+      <% } %>
+      <% if(commande.taille == "S") { %>
+        <% prix *= 0.8; %>
+      <% } else if (commande.taille == "L") { %>
+        <% prix *= 1.2; %>
+      <% } %>
+      <% prix *= commande.qte %>
+      <p> total : <%= prix.toFixed(2) %> $ </p>
+      <p> TPS : <%= (prix*0.05).toFixed(2) %> $ </p>
+      <p> TVQ : <%= (prix*0.09975).toFixed(2) %> $ </p>
+      <h4> TOTAL AVEC TAXES : <%= (prix*1.14975).toFixed(2) %> $ </h4>
+    </main>
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>
